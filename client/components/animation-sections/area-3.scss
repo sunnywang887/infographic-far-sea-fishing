@@ -1,0 +1,192 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 631px;
+
+.bg {
+  width: 100%;
+}
+
+.title01 {
+  position: absolute;
+  width: 97.5%;
+  top: 6.5%;
+}
+
+.title02 {
+  position: absolute;
+  width: 58.9%;
+  top: 19.4%;
+}
+
+.ship {
+  @extend .base;
+
+  width: widthPercentage(78px);
+  top: heightPercentage(241px, $baseHeight);
+
+  &.ship01{
+    left: -179%;
+  }
+
+  &.ship02 {
+    left: -156%;
+  }
+
+  &.ship03 {
+    left: -133%;
+  }
+
+  &.ship04 {
+    left: -100%;
+  }
+}
+
+.flag {
+  @extend .base;
+  top: heightPercentage(173px, $baseHeight);
+
+  width: widthPercentage(30px);
+
+  &.flag01{
+    left: 8%;
+  }
+
+  &.flag02 {
+    left: 33%;
+  }
+
+  &.flag03 {
+    left: 56%;
+  }
+
+  &.flag04 {
+    left: 79%;
+  }
+}
+
+.rope {
+  @extend .base;
+  top: heightPercentage(241px, $baseHeight);
+  height: heightPercentage(100px, $baseHeight);
+  z-index: 1;
+
+  .mask {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
+  }
+  
+  &.rope01 {
+    width: 2%;
+    left: 8%;
+  }
+
+  &.rope02 {
+    width: 2%;
+    left: 33%;
+  }
+
+  &.rope03 {
+    width: 2%;
+    left: 56%;
+  }
+
+  &.rope04 {
+    width: 2%;
+    left: 79%;
+  }
+}
+
+.fish {
+  @extend .base;
+
+  z-index: 1;
+  
+  &.fish01 {
+    width: 5.81%;
+    left: 5.4%;
+    top: 53.0%;
+  }
+
+  &.fish02 {
+    width: 5.81%;
+    left: 30.4%;
+    top: 52.5%;
+  }
+
+  &.fish03 {
+    width: 5.81%;
+    left: 53.3%;
+    top: 52.5%;
+  }
+
+  &.fish04 {
+    width: 5.81%;
+    left: 76.3%;
+    top: 52.5%;
+  }
+}
+
+.number {
+  @extend .base;
+  z-index: 1;
+
+  &.number01 {
+    width: 28.9%;
+    top: 78.5%;
+  }
+
+  &.number02 {
+    width: 14.6%;
+    top: 71.1%;
+    left: 30%;
+  }
+
+  &.number03 {
+    width: 14.6%;
+    top: 66%;
+    left: 54%;
+  }
+
+  &.number04 {
+    width: 14.6%;
+    top: 66%;
+    left: 77%;
+  }
+}
+
+.annotation {
+  @extend .annotation;
+  bottom: heightPercentage(30px, $baseHeight);
+  text-align: justify;
+}
+
+// shared desktop and tablet
+@include mq($min-width: $screen-sm-min) {
+  .bg {
+    visibility: hidden;
+    height: calDesktopHeight($baseHeight);
+    width: 100%;
+  }
+
+  .animation-block {
+    position: absolute;
+    top: 0%;
+    left: 45px;
+    right: 45px;
+    width: $desktop-area;
+    height: 100%;
+  }
+}

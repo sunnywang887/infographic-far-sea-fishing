@@ -1,0 +1,111 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 839px;
+
+.bg {
+  width: 100%;
+}
+
+.title01 {
+  position: absolute;
+  top: heightPercentage(36px, $baseHeight);
+  width: widthPercentage(284px);
+}
+
+.title02 {
+  position: absolute;
+  top: heightPercentage(129px, $baseHeight);
+  width: widthPercentage(361px);
+}
+
+.title03 {
+  position: absolute;
+  top: heightPercentage(206px, $baseHeight);
+  width: widthPercentage(191px);
+}
+
+.flags {
+  @extend .base;
+  width: widthPercentage(346px);
+  right: 0;
+  top: heightPercentage(265px, $baseHeight);
+  margin: 0 auto;
+}
+
+.ships {
+  @extend .base;
+  top: heightPercentage(316px, $baseHeight);
+  line-height: 2;
+
+  ul {
+    float: left;
+    width: 12.8%;
+    margin: 0;
+    padding-left: 6%;
+    display: inline;
+  }
+
+  li {
+    list-style: none;
+    display: inline;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.number {
+  @extend .base;
+  height: 100%;
+
+  &.number01 {
+    width: widthPercentage(118px);
+    left: widthPercentage(10px);
+  }
+
+  &.number02 {
+    width: widthPercentage(51px);
+    left: widthPercentage(109px);
+  }
+
+  &.number03 {
+    width: widthPercentage(51px);
+    left: widthPercentage(191px);
+  }
+
+  &.number04 {
+    width: widthPercentage(51px);
+    left: widthPercentage(273px);
+  }
+
+  &.number05 {
+    width: widthPercentage(51px);
+    left: widthPercentage(351px);
+  }
+}
+
+.annotation {
+  @extend .annotation;
+  bottom: heightPercentage(30px, $baseHeight);
+  text-align: justify;
+}
+
+// shared desktop and tablet
+@include mq($min-width: $screen-sm-min) {
+  .bg {
+    visibility: hidden;
+    height: calDesktopHeight($baseHeight);
+    width: 100%;
+  }
+
+  .ships {
+    line-height: 2.5;
+  }
+  
+  .annotation {
+    text-align: center;
+  }
+}

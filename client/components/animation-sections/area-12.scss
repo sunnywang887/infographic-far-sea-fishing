@@ -1,0 +1,70 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import './base.scss';
+@import './media-queries.scss';
+
+.bg {
+  width: 100%;
+  line-height: 1.8;
+  position: relative;
+}
+
+.text {
+  max-width: 640px;
+  position: static;
+  padding: 35px;
+}
+
+.list {
+  color: #893933;
+  max-width: 640px;
+  padding: 0 35px 150px 35px;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+
+  span {
+    padding-left: 5px;
+    text-decoration: underline;
+  }
+}
+
+.fish {
+  width: widthPercentage(29px);
+}
+
+.boat {
+  z-index: -1;
+  width: widthPercentage(166px);
+  max-width: 166px;
+  position: absolute;
+  right: 0;
+  bottom: 90%;
+}
+
+.sea {
+  position: relative;
+}
+
+// shared desktop and tablet
+@include mq($min-width: $screen-sm-min) {
+  .bg {
+    visibility: visible;
+    height: auto;
+  }
+  .boat {
+    right: 45%;
+    bottom: 93%;
+  }
+  .list {
+    font-size: 28px;
+    padding: 0 35px 250px 35px;
+  }
+}
+
+// tablet
+@include mq($min-width: $screen-sm-min, $max-width: $screen-sm-max) {
+}
+
+// desktop. wait for spec
+@include mq($min-width: $screen-md-min) {
+}

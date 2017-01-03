@@ -1,0 +1,116 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 501px;
+
+.bg {
+  width: 100%;
+}
+
+.title {
+  position: absolute;
+  top: heightPercentage(30px, $baseHeight);
+  width: widthPercentage(325px);
+}
+
+.base-mask {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.ship01 {
+  @extend .base;
+  width: widthPercentage(92px);
+}
+
+.ball {
+  @extend .base;
+  width: widthPercentage(217px);
+  top: heightPercentage(168px, $baseHeight);
+  left: widthPercentage(57px);
+}
+
+.ball-mask {
+  @extend .base-mask;
+}
+
+.circle {
+  @extend .base;
+  width: widthPercentage(180px);
+  top: heightPercentage(237px, $baseHeight);
+  left: widthPercentage(187px);
+  overflow: hidden;
+}
+
+.ship02 {
+  @extend .base;
+  width: 22.1%;
+  left: 8%;
+  top: 40%;
+}
+
+.net {
+  @extend .base;
+  width: 74.1%;
+  top: 42%;
+
+  .mask {
+    @extend .base-mask;
+    top: 42%;
+    left: 3%;
+  }
+}
+
+.float {
+  @extend .base;
+  width: 47.8%;
+  left: 8.5%;
+  top: 41%;
+
+  .mask {
+    @extend .base-mask;
+    top: 41%;
+    left: 8.5%;
+  }
+}
+
+.fish {
+  @extend .base;
+  width: 49.5%;
+  left: 23%;
+  top: 68%;
+}
+
+.word {
+  @extend .base;
+  width: widthPercentage(271px);
+  left: 0%;
+  top: heightPercentage(129px, $baseHeight);
+}
+
+.annotation {
+  @extend .annotation;
+  color: #EDEBEB;
+  position: static;
+  margin-bottom: 30px;
+}
+
+// shared desktop and tablet
+@include mq($min-width: $screen-sm-min) {
+  .bg {
+    visibility: hidden;
+    height: calDesktopHeight($baseHeight);
+    width: 100%;
+  }
+}

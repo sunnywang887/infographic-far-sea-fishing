@@ -1,0 +1,203 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 589px;
+
+.bg {
+  width: 100%;
+}
+
+.title01 {
+  position: absolute;
+  top: heightPercentage(40px, $baseHeight);
+  width: widthPercentage(288px);
+}
+
+.title02 {
+  position: absolute;
+  top: heightPercentage(117px, $baseHeight);
+  width: widthPercentage(270px);
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.sea {
+  @extend .base;
+  width: widthPercentage(85px);
+  left: widthPercentage(90px);
+  top: heightPercentage(299px, $baseHeight);
+}
+
+.bigship {
+  position: absolute;
+  width: widthPercentage(90px);
+  top: heightPercentage(178px, $baseHeight);
+  left: widthPercentage(193px); 
+}
+
+.ship01-3d {
+  @extend .base;
+  width: widthPercentage(22px);
+}
+
+.ship02-3d {
+  @extend .base;
+  width: widthPercentage(20px);
+  left: widthPercentage(193px);
+  top: heightPercentage(319px, $baseHeight);
+  z-index: 1;
+}
+
+.ship03-3d {
+  @extend .base;
+  width: widthPercentage(19px);
+  left: widthPercentage(43px);
+  top: heightPercentage(319px, $baseHeight);
+  z-index: 1;
+}
+
+.ship04-3d {
+  @extend .base;
+  width: widthPercentage(30px);
+  left: widthPercentage(160px);
+  top: heightPercentage(266px, $baseHeight);
+  z-index: 1;
+}
+
+.net01-3d {
+  @extend .base;
+  width: widthPercentage(41px);
+  left: widthPercentage(178px);
+  top: heightPercentage(278px, $baseHeight);
+}
+
+.net02-3d {
+  @extend .base;
+  width: widthPercentage(153px);
+  left: widthPercentage(52px);
+  top: heightPercentage(331px, $baseHeight);
+}
+
+.net03-3d {
+  @extend .base;
+  width: widthPercentage(125px);
+  left: widthPercentage(53px);
+  top: heightPercentage(268px, $baseHeight);
+}
+
+.line01 {
+  @extend .base;
+  width: 10%;
+  left: 47%;
+  top: auto;
+  bottom: 44%;
+}
+
+.line02 {
+  @extend .base;
+  width: 51.7%;
+  left: 5.5%;
+  top: auto;
+  bottom: 12%;
+}
+
+.line03 {
+  @extend .base;
+  width: 41.1%;
+  left: 5%;
+  top: auto;
+  bottom: 41%;
+}
+
+.word {
+  @extend .base;
+  width: widthPercentage(191px);
+  top: heightPercentage(236px, $baseHeight);
+  left: widthPercentage(32px);
+}
+
+.circle {
+  @extend .base;
+  width: widthPercentage(180px);
+  top: heightPercentage(368px, $baseHeight);
+  left: widthPercentage(187px);
+  overflow: hidden;
+  line-height: 0;
+
+  .ship01 {
+    @extend .base;
+    width: 35.5%;
+    left: 68.4%;
+    top: 31.5%;
+    z-index: 2
+  }
+
+  .ship02 {
+    @extend .base;
+    width: 12%;
+    left: 65.4%;
+    top: 37%;
+    transform: rotateZ(-28deg);
+    z-index: 3;
+  }
+
+  .netBg {
+    @extend .base;
+    width: 68.65%;
+    top: 43%;
+    left: 8.5%;
+    overflow: hidden;
+    .net01 {
+      @extend .base;
+      width: 5.68%;
+      left: 94.3%;
+      top: 5.5%;
+      z-index: 1;
+      background-color: #a7c3d8;
+    }
+
+    .net02 {
+      @extend .base;
+      width: 100%;
+      left: 94.4%;
+      z-index: 0;
+    }
+  }
+  .fish {
+    @extend .base;
+    width: 20%;
+    left: 30%;
+    top: 55%;
+  }
+}
+
+
+.text {
+  @extend .base;
+  width: 68%;
+  left: 8%;
+  top: 8%;
+}
+
+// shared desktop and tablet
+@include mq($min-width: $screen-sm-min) {
+  .bg {
+    visibility: hidden;
+    height: calDesktopHeight($baseHeight);
+    width: 100%;
+  }
+}

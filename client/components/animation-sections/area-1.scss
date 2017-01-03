@@ -1,0 +1,171 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 836px;
+
+.bg {
+  width: 100%;
+}
+
+.title01 {
+  position: absolute;
+  top: heightPercentage(30px, $baseHeight);
+  width: widthPercentage(353px);
+}
+
+.title02 {
+  position: absolute;
+  top: heightPercentage(124px, $baseHeight);
+  width: widthPercentage(342px);
+}
+
+.title03 {
+  position: absolute;
+  top: heightPercentage(260px, $baseHeight);
+  width: widthPercentage(240px);
+}
+
+.title04 {
+  width: 75%;
+  top: heightPercentage(186px, $baseHeight);
+}
+
+.plate {
+  width: 98%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 40%;
+  position: relative;
+  > img {
+    width: 100%;
+  }
+}
+
+.sashimi, .text-block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  img {
+    position: absolute;
+    width: 100%;
+  }
+
+  .pie05 {
+    z-index: 1;
+  }
+
+  .mask05 {
+    z-index: 2;
+    img {
+      width: 99%;
+    }
+  }
+
+  .pie04 {
+    z-index: 3;
+    img {
+      width: 99%;
+    }
+  }
+
+  .mask04 {
+    z-index: 4;
+    img {
+      width: 99%;
+    }
+  }
+
+  .pie03 {
+    z-index: 5;
+  }
+
+  .mask03 {
+    z-index: 6;
+    img {
+      width: 99%;
+    }
+  }
+
+  .pie02 {
+    z-index: 7;
+  }
+
+  .mask02 {
+    z-index: 8;
+    img {
+      width: 99%;
+    }
+  }
+
+  .pie01 {
+    z-index: 9;
+  }
+
+  .mask01 {
+    z-index: 10;
+    img {
+      width: 99%;
+    }
+  }
+
+  .text01, .text02, .text03, .text04, .text05 {
+    z-index: 11;
+  }
+  
+  $plateHeight: 400px;
+  .text01 {
+    width: widthPercentage(142px);
+    top: heightPercentage(138px, $plateHeight);
+    left: widthPercentage(217px);
+  }
+  .text02 {
+    width: widthPercentage(55px);
+    top: heightPercentage(272px, $plateHeight);
+    left: widthPercentage(111px);
+  }
+  .text03 {
+    width: widthPercentage(55px);
+    top: heightPercentage(164px, $plateHeight);
+    left: widthPercentage(66px);
+  }
+  .text04 {
+    width: widthPercentage(42px);
+    top: heightPercentage(83px, $plateHeight);
+    left: widthPercentage(101px);
+  }
+  .text05 {
+    width: widthPercentage(42px);
+    top: heightPercentage(57px, $plateHeight);
+    left: widthPercentage(154px);
+  }
+}
+
+.annotation {
+  @extend .annotation;
+  bottom: heightPercentage(30px, $baseHeight);
+  text-align: justify;
+}
+
+// shared desktop and tablet
+@include mq($min-width: $screen-sm-min) {
+  .bg {
+    visibility: hidden;
+    height: calDesktopHeight($baseHeight);
+    width: 100%;
+  }
+
+  .annotation {
+    text-align: center;
+  }
+}
+
+// tablet
+@include mq($min-width: $screen-sm-min, $max-width: $screen-sm-max) {
+}
+
+// desktop. wait for spec
+@include mq($min-width: $screen-md-min) {
+}

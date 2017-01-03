@@ -1,0 +1,199 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import './base.scss';
+@import './media-queries.scss';
+
+$area4-base-height: 432px;
+$area5-base-height: 348px;
+$area6-base-height: 294px;
+
+.area {
+  @extend .area;
+  background-color: #E5E2E2;
+}
+
+.area01 {
+  background-color: #E5E2E2;
+}
+
+.area02 {
+  background-color: #ececec;  
+}
+
+.area03 {
+  background-color: #E5E2E2;
+}
+
+.bg01, .bg02, .bg03 {
+  width: 100%;
+}
+
+.title01 {
+  width: widthPercentage(405px);
+  margin: 0 auto;
+  padding: 40px 0 30px 0;
+  display: block;
+}
+
+.title02 {
+  width: widthPercentage(169px);
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 10px;
+}
+
+.fish01 {
+  @extend .base;
+  top: heightPercentage(88px, $area4-base-height);
+  width: widthPercentage(308px);
+}
+
+.fish02 {
+  @extend .base;
+  top: heightPercentage(105px, $area5-base-height);
+  width: widthPercentage(202px);
+}
+
+.fish03 {
+  @extend .base;
+  top: heightPercentage(131px, $area6-base-height);
+  width: widthPercentage(130px);
+}
+
+.name01 {
+  @extend .base;
+  top: heightPercentage(20px, $area4-base-height);
+  width: widthPercentage(91px);
+}
+
+.name02 {
+  @extend .base;
+  top: heightPercentage(25px, $area5-base-height);
+  width: widthPercentage(91px);
+  right: 0;
+  margin: 0 auto;
+}
+
+.name03 {
+  @extend .base;
+  top: heightPercentage(25px, $area6-base-height);
+  width: widthPercentage(91px);
+  right: 0;
+  margin: 0 auto;
+}
+
+.number {
+  $font-size: 40px;
+  $font-weight: 700;
+  $font-color: #893933;
+  text-align: center;
+
+  @extend .base;
+  
+  .presentation {
+    background-color: #ececec;
+    border: 0;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $font-color; 
+  }
+  span {
+    font-size: 26px;
+    font-weight: $font-weight;
+    color: #332323; 
+    padding-left: 8px;
+  }
+}
+
+.number01 {
+  @extend .number;
+  top: heightPercentage(313px, $area4-base-height);
+  .presentation {
+    background-color: #E5E2E2;
+  }
+}
+
+.number02 {
+  @extend .number;
+  top: heightPercentage(240px, $area5-base-height);
+}
+
+.number03 {
+  @extend .number;
+  top: heightPercentage(220px, $area6-base-height);
+  .presentation {
+    background-color: #E5E2E2;
+  }
+}
+
+.note {
+  @extend .base;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.note01 {
+  @extend .note;
+  width: widthPercentage(205px);
+  top: heightPercentage(373px, $area4-base-height);
+}
+
+.note02 {
+  @extend .note;
+  width: widthPercentage(205px);
+  top: heightPercentage(289px, $area5-base-height);
+}
+
+.note03 {
+  @extend .note;
+  width: widthPercentage(205px);
+  top: heightPercentage(260px, $area6-base-height);
+}
+
+.ranking01, .ranking02, .ranking03 {
+  @extend .base;
+  width: widthPercentage(70px);
+}
+
+.annotation {
+  @extend .annotation;
+  position: relative;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  text-align: justify;
+}
+
+// shared desktop and tablet
+@include mq($min-width: $screen-sm-min) {
+  .bg01 {
+    visibility: hidden;
+    height: calDesktopHeight($area4-base-height);
+    width: 100%;
+  }
+  .bg02 {
+    visibility: hidden;
+    height: calDesktopHeight($area5-base-height);
+    width: 100%;
+  }
+  .bg03 {
+    visibility: hidden;
+    height: calDesktopHeight($area6-base-height);
+    width: 100%;
+  }
+  .number {
+    .presentation {
+      font-size: 54px;
+    }
+    span {
+      font-size: 40px;
+    }
+  }
+}
+
+// tablet
+@include mq($min-width: $screen-sm-min, $max-width: $screen-sm-max) {
+}
+
+// desktop. wait for spec
+@include mq($min-width: $screen-md-min) {
+}

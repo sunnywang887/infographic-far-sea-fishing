@@ -1,0 +1,98 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 643px;
+
+.area {
+  @extend .area;
+  padding-top: 40px;
+}
+
+.bg {
+  width: 100%;
+}
+
+.title {
+  position: absolute; 
+  width: widthPercentage(273px);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  img {
+    width: 100%;
+  }
+}
+
+.logo {
+  position: absolute;
+  left: widthPercentage(164px);
+  top: heightPercentage(412px, $baseHeight);
+  display: block;
+  width: widthPercentage(118px);
+  z-index: 2;
+}
+
+.boat01 {
+  @extend .base;
+  top: heightPercentage(422px, $baseHeight);
+  width: widthPercentage(150px);
+  z-index: 0;
+}
+
+.boat02 {
+  @extend .base;
+  top: heightPercentage(412px, $baseHeight);
+  width: widthPercentage(133px);
+  z-index: 0;
+}
+
+.sun {
+  @extend .base;
+  top: heightPercentage(252px, $baseHeight);
+}
+
+.fish {
+  @extend .base;
+  width: widthPercentage(299px);
+  top: auto;
+  left: 200%;
+  bottom: -10%;
+}
+
+.text {
+  @extend .text;
+  top: heightPercentage(477px, $baseHeight);
+  padding: 0 6%;
+  color: #EDEBEB;
+  z-index: 2;
+}
+
+// shared desktop and tablet
+@include mq($min-width: $screen-sm-min) {
+  .area {
+    padding-top: 0px;
+  }
+  .bg {
+    visibility: hidden;
+    height: calDesktopHeight($baseHeight);
+    width: 100%;
+  }
+}
+
+// tablet
+@include mq($min-width: $screen-sm-min, $max-width: $screen-sm-max) {
+  .text {
+    font-size: 28px;
+  }
+}
+
+// desktop. wait for spec
+@include mq($min-width: $screen-md-min) {
+  .area {
+    padding-top: 0px;
+  }
+  .text {
+    font-size: 28px;
+  }
+}

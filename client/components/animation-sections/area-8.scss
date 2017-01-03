@@ -1,0 +1,62 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 398px;
+
+.area {
+  background-color: #E5E2E2;
+}
+
+.bg {
+  width: 100%;
+}
+
+.boat {
+  @extend .base;
+  top: heightPercentage(45px, $baseHeight);
+  width: widthPercentage(180px);
+}
+
+.foc {
+  @extend .base;
+  top: heightPercentage(45px, $baseHeight);
+  width: widthPercentage(402px);
+}
+
+.title {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  width: widthPercentage(246px);
+  top: heightPercentage(128px, $baseHeight);
+}
+
+.text {
+  top: heightPercentage(181px, $baseHeight);
+  padding-left: widthPercentage(28px);
+  padding-right: widthPercentage(28px);
+  z-index: 1;
+  color: white;
+}
+
+.annotation {
+  bottom: widthPercentage(30px, $baseHeight);
+}
+
+// shared desktop and tablet
+@include mq($min-width: $screen-sm-min) {
+  .bg {
+    visibility: hidden;
+    height: calDesktopHeight($baseHeight);
+    width: 100%;
+  }
+}
+
+// tablet
+@include mq($min-width: $screen-sm-min, $max-width: $screen-sm-max) {
+}
+
+// desktop. wait for spec
+@include mq($min-width: $screen-md-min) {
+}

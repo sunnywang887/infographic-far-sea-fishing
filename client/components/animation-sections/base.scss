@@ -1,0 +1,149 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import './media-queries.scss';
+
+$mobile-area: 414px;
+$desktop-area: 640px; 
+
+@function widthPercentage($width, $baseWidth: $mobile-area) {
+  @return percentage($width / $baseWidth);
+}
+
+@function heightPercentage($height, $baseHeight) {
+  @return percentage($height / $baseHeight);
+}
+
+@function calDesktopHeight($mobileHeight) {
+  @return ($mobileHeight * ($desktop-area / $mobile-area));
+}
+
+.seo-hidden {
+  display: none;
+}
+
+.area {
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+h2, h3, p {
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 730px;
+  position: relative;
+}
+
+.animation-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.base {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  img {
+    width: 100%;
+  }
+}
+
+.text {
+  position: absolute;
+  text-align: justify;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.annotation {
+  font-size: 14px;
+  font-weight: 300;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  line-height: 1.5;
+  max-width: 640px;
+  width: widthPercentage(317px);
+}
+
+.sea {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.mobile {
+  display: block;
+  width: 100%;
+}
+
+.non-mobile {
+  display: none;
+}
+
+.ab-center {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// shared desktop and tablet
+@include mq($min-width: $screen-sm-min) {
+  .bg {
+    visibility: hidden;
+    width: 100%;
+  }
+
+  .animation-block {
+    position: absolute;
+    top: 0%;
+    left: 45px;
+    right: 45px;
+    width: $desktop-area;
+    height: 100%;
+  }
+
+  .sea {
+    left: -2000px;
+    width: 5000px;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .non-mobile {
+    display: block;
+  }
+
+  .text {
+    font-size: 24px;
+  }
+
+  .animation {
+    font-size: 18px;
+  }
+
+  .annotation {
+    font-size: 22px;
+  }
+}
+
+@include mq($max-width: 413px) {
+  .text {
+    font-size: 15px;
+  }
+}

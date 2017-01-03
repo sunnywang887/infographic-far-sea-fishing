@@ -1,0 +1,64 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import './base.scss';
+@import './media-queries.scss';
+
+.bg {
+  width: 100%;
+  line-height: 1.8;
+}
+
+.title01 {
+  display: block;
+  margin-top: 40px;
+  width: widthPercentage(284px);
+}
+
+.title02 {
+  display: block;
+  margin-top: 30px;
+  width: widthPercentage(388px);
+}
+
+.title03 {
+  display: block;
+  margin-top: 30px;
+  width: widthPercentage(243px);
+}
+
+.title04 {
+  display: block;
+  width: widthPercentage(258px);
+}
+
+.text {
+  max-width: 640px;
+  position: static;
+  padding: 20px 20px 0 20px;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.annotation {
+  position: static;
+  margin-top: 37px;
+  margin-bottom: 30px;
+}
+
+// shared desktop and tablet
+@include mq($min-width: $screen-sm-min) {
+  .bg {
+    visibility: visible;
+  }
+}
+
+// tablet
+@include mq($min-width: $screen-sm-min, $max-width: $screen-sm-max) {
+}
+
+// desktop. wait for spec
+@include mq($min-width: $screen-md-min) {
+}

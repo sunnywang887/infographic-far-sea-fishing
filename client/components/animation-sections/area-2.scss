@@ -1,0 +1,205 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 569px;
+
+.bg {
+  width: 100%;
+}
+
+.title01 {
+  position: absolute;
+  width: widthPercentage(288px);
+  top: heightPercentage(40px, $baseHeight);
+}
+
+.title02 {
+  position: absolute;
+  width: widthPercentage(281px);
+  top: heightPercentage(157px, $baseHeight);
+}
+
+.earth-cans-anima {
+  left: 0;
+  right: 0;
+  @extend .animation-block;
+  top: heightPercentage(200px, $baseHeight);
+  height: 47.3%;
+
+  .earth {
+    position: absolute;
+    width: 65%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 2;
+  }
+
+  .shadow {
+    position: absolute;
+    width: 75%;
+    top: -10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  
+  &:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+}
+
+
+.cans-block {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.cans {
+  ul {
+    margin: 0;
+    padding: 0;
+    display: table-row;
+
+    &:first-child {
+      li {
+        padding: 0px;
+
+        &:first-child {
+          top: -26px;
+          right: -13%;
+          z-index: 1;
+        }
+
+        &:nth-child(2) {
+          left: 4%;
+          top: -12px
+        }
+
+        &:last-child {
+          top: -26px;
+          left: -13%;
+          z-index: 0;
+        }
+
+        &:nth-last-child(2) {
+          right: 4%;
+          top: -12px;
+          z-index: 1;
+        }
+      }
+    }
+
+    &:last-child {
+      li {
+        &:first-child {
+          top: -26px;
+          right: -13%;
+          z-index: 1;
+        }
+
+        &:nth-child(2) {
+          left: 4%;
+          top: -12px;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: table-cell; 
+    z-index: 2;
+
+    .can-bg {
+      width: 50%;
+    }
+
+    .can {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
+
+.word {
+  @extend .base;
+  width: widthPercentage(359px);
+  top: heightPercentage(400px, $baseHeight);
+  z-index: 2; 
+  img {
+    width: 100%;
+  }
+}
+
+.annotation {
+  @extend .annotation;
+  bottom: heightPercentage(30px, $baseHeight);
+  text-align: justify;
+}
+
+// shared tablet & desktop 
+@include mq($min-width: $screen-sm-min) {
+  .bg {
+    visibility: hidden;
+    height: 881px;
+    width: 100%;
+  }
+  .cans {
+    ul {
+      &:first-child {
+        li {
+          padding: 10px;
+
+          &:first-child {
+            top: -45px;
+          }
+
+          &:nth-child(2) {
+            top: -20px
+          }
+
+          &:last-child {
+            top: -45px;
+          }
+
+          &:nth-last-child(2) {
+            top: -20px;
+          }
+        }
+      }
+
+      &:last-child {
+        li {
+          &:first-child {
+            top: -45px;
+          }
+
+          &:nth-child(2) {
+            top: -20px;
+          }
+        }
+      }
+    }
+  }
+  .annotation {
+    text-align: center;
+  }
+}
+
+@include mq($max-width: 413px) {
+  .cans-block {
+    line-height: 1;
+}
+}
