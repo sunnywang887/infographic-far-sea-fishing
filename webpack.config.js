@@ -1,3 +1,4 @@
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 var rucksack = require('rucksack-css')
 var webpack = require('webpack')
 var path = require('path')
@@ -9,11 +10,7 @@ module.exports = {
     jsx: './index.js',
     vendor: [
       'react',
-      'react-dom',
-      'react-redux',
-      'react-router',
-      'react-router-redux',
-      'redux'
+      'react-dom'
     ]
   },
   output: {
@@ -50,7 +47,11 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+        test: /\.(png|jpg|jpeg|gif|woff|woff2)$/,
+        loader: 'file-loader'
+      },
+      {
+        test: /\.(svg|gif)$/,
         loader: 'url-loader',
         query: {
           name:  env === 'development' ? '[path][name].[ext]?[hash]' : '[hash].[ext]',
