@@ -39,7 +39,7 @@ function Area(props) {
           <div>工程 ｜ 李法賢</div>
           <div>監製 ｜ 李雪莉</div>
         </div>
-        <a href="https://twreporter.backme.tw/cashflow/confirm/3b2f2834-158d-4716-a35a-6f7a507f9142?locale=zh-TW" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.twreporter.org/donation/period" target="_blank" rel="noopener noreferrer">
           <img className={cx(style.donate, baseStyle['ab-center'])} src={donate} alt="贊助我們" />
         </a>
         <a href="https://twreporter.org/" target="_blank" rel="noopener noreferrer">
