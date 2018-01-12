@@ -12,11 +12,6 @@ A boilerplate of things that mostly shouldn't exist.
 - [x] [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [x] [PostCSS](https://github.com/postcss/postcss)
 - [x] [CSS modules](https://github.com/outpunk/postcss-modules)
-- [x] [Rucksack](http://simplaio.github.io/rucksack/docs)
-- [x] [React Router Redux](https://github.com/reactjs/react-router-redux)
-- [x] [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
-- [ ] Redux effects
-- [x] TodoMVC example
 
 ## Setup
 
