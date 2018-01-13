@@ -34,7 +34,6 @@ class Area extends Component {
   }
 
   componentDidMount() {
-    this._isMounted = true
     const self = this
     function changeJumpState() {
       setTimeout(() => {
@@ -47,18 +46,14 @@ class Area extends Component {
     changeJumpState()
   }
 
-  componentWillUnmount() {
-    this._isMounted = false
-  }
-
   _onChange(isVisible) {
-    if (isVisible && this._isMounted) {
+    if (isVisible) {
       this._timeout = setTimeout(() => {
         this.setState({
           toAnimateBoat: true,
         })
         clearTimeout(this._timeout)
-      }, 500)
+      }, 1500)
     }
   }
 
@@ -78,7 +73,6 @@ class Area extends Component {
         onChange={this.onChange}
         active={!toAnimateBoat}
         partialVisibility
-        minTopValue={200}
       >
         <div className={style.area}>
           <div className={baseStyle.container}>

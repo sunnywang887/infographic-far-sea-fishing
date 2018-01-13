@@ -28,7 +28,7 @@ export default class App extends Component {
       this.setState({
         isLoaded: true,
       })
-    }, 1000).bind(this)
+    }, 1000)
   }
 
   render() {
