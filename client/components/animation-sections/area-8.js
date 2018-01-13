@@ -1,50 +1,50 @@
 /* eslint  no-underscore-dangle: ["error", { "allowAfterThis": true }]*/
 
-import VisibilitySensor from 'react-visibility-sensor';
-import cx from 'classnames';
-import React, { Component } from 'react';
-import { Animate } from './base-animate';
+import VisibilitySensor from 'react-visibility-sensor'
+import cx from 'classnames'
+import React, { Component } from 'react'
+import { Animate } from './base-animate'
 
 // css
-import baseStyle from './base.scss';
-import style from './area-8.scss';
+import baseStyle from './base.scss'
+import style from './area-8.scss'
 
 // image
-import bgImg from '../../../static/img/area-8/background.png';
-import boatImg from '../../../static/img/area-8/boat.png';
-import focImg from '../../../static/img/area-8/foc.png';
-import titleImg from '../../../static/img/area-8/title.png';
-import sea01Img from '../../../static/img/area-8/sea-w414.png';
-import sea02Img from '../../../static/img/area-8/sea-w5000.png';
+import bgImg from '../../../static/img/area-8/background.png'
+import boatImg from '../../../static/img/area-8/boat.png'
+import focImg from '../../../static/img/area-8/foc.png'
+import titleImg from '../../../static/img/area-8/title.png'
+import sea01Img from '../../../static/img/area-8/sea-w414.png'
+import sea02Img from '../../../static/img/area-8/sea-w5000.png'
 
 class Area extends Component {
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       toAnimateFOC: false,
-    };
-    this.onChange = this._onChange.bind(this);
+    }
+    this.onChange = this._onChange.bind(this)
   }
 
   componentDidMount() {
-    this._isMounted = true;
+    this._isMounted = true
   }
 
   componentWillUnmount() {
-    this._isMounted = false;
+    this._isMounted = false
   }
 
   _onChange(isVisible) {
     if (isVisible && this._isMounted) {
       this.setState({
         toAnimateFOC: true,
-      });
+      })
     }
   }
 
   render() {
-    const { toAnimateFOC } = this.state;
+    const { toAnimateFOC } = this.state
     return (
       <VisibilitySensor
         onChange={this.onChange}
@@ -83,8 +83,8 @@ class Area extends Component {
           </div>
         </div>
       </VisibilitySensor>
-    );
+    )
   }
 
 }
-export default Area;
+export default Area

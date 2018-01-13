@@ -1,19 +1,19 @@
 /* eslint no-underscore-dangle: ["error", { "allowAfterThis": true }] */
 /* eslint no-unused-vars: ["error", { "args": "none" }] */
 
-import cx from 'classnames';
-import React from 'react';
+import cx from 'classnames'
+import React from 'react'
 
 // css
-import baseStyle from './base.scss';
-import style from './area-11.scss';
+import baseStyle from './base.scss'
+import style from './area-11.scss'
 
 // image
-import title1 from '../../../static/img/area-11/title-1.png';
-import title2 from '../../../static/img/area-11/title-2.png';
-import title3 from '../../../static/img/area-11/title-3.png';
-import title4 from '../../../static/img/area-11/title-4.png';
-import map from '../../../static/img/area-11/map.png';
+import title1 from '../../../static/img/area-11/title-1.png'
+import title2 from '../../../static/img/area-11/title-2.png'
+import title3 from '../../../static/img/area-11/title-3.png'
+import title4 from '../../../static/img/area-11/title-4.png'
+import map from '../../../static/img/area-11/map.png'
 
 function Area(props) {
   return (
@@ -49,6 +49,6 @@ function Area(props) {
         </p>
       </div>
     </div>
-  );
+  )
 }
-export default Area;
+export default Area

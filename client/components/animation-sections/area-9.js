@@ -1,49 +1,49 @@
 /* eslint no-underscore-dangle: ["error", { "allowAfterThis": true }] */
 
-import React, { Component, PropTypes } from 'react';
-import VisibilitySensor from 'react-visibility-sensor';
-import cx from 'classnames';
-import { velocityHelpers } from 'velocity-react';
-import baseStyle from './base.scss';
-import style from './area-9.scss';
-import { Animate, AnimateWithMask } from './base-animate';
+import 'velocity-animate'
+import 'velocity-animate/velocity.ui'
+
+import React, { Component, PropTypes } from 'react'
+import VisibilitySensor from 'react-visibility-sensor'
+import cx from 'classnames'
+import { velocityHelpers } from 'velocity-react'
+import baseStyle from './base.scss'
+import style from './area-9.scss'
+import { Animate, AnimateWithMask } from './base-animate'
 
 // image
-import bgImg from '../../../static/img/area-9/background.png';
-import bigShip3d from '../../../static/img/area-9/3D/boat-0.png';
-import title01 from '../../../static/img/area-9/title-1.png';
-import title02 from '../../../static/img/area-9/title-2.png';
-import ship013d from '../../../static/img/area-9/3D/boat-1.png';
-import ship023d from '../../../static/img/area-9/3D/boat-2.png';
-import ship033d from '../../../static/img/area-9/3D/boat-3.png';
-import ship043d from '../../../static/img/area-9/3D/boat-4.png';
-import net013d from '../../../static/img/area-9/3D/net-1.png';
-import net023d from '../../../static/img/area-9/3D/net-2.png';
-import net033d from '../../../static/img/area-9/3D/net-3.png';
-import netMask013d from '../../../static/img/area-9/3D/net-1-mask.png';
-import netMask023d from '../../../static/img/area-9/3D/net-2-mask.png';
-import netMask033d from '../../../static/img/area-9/3D/net-3-mask.png';
-import sea1 from '../../../static/img/area-9/3D/sea-1.png';
-import sea2 from '../../../static/img/area-9/3D/sea-2.png';
-import word from '../../../static/img/area-9/3D/word.png';
-import circle2d from '../../../static/img/area-9/2D/cirle.png';
-import ship012d from '../../../static/img/area-9/2D/boat-1.png';
-import ship022d from '../../../static/img/area-9/2D/boat-2.png';
-import net012d from '../../../static/img/area-9/2D/net-1.png';
-import net022d from '../../../static/img/area-9/2D/net-2.png';
-import netBg2d from '../../../static/img/area-9/2D/net-2-mask.png';
-import fish2d from '../../../static/img/area-9/2D/fish.png';
-
-require('velocity-animate');
-require('velocity-animate/velocity.ui');
+import bgImg from '../../../static/img/area-9/background.png'
+import bigShip3d from '../../../static/img/area-9/3D/boat-0.png'
+import title01 from '../../../static/img/area-9/title-1.png'
+import title02 from '../../../static/img/area-9/title-2.png'
+import ship013d from '../../../static/img/area-9/3D/boat-1.png'
+import ship023d from '../../../static/img/area-9/3D/boat-2.png'
+import ship033d from '../../../static/img/area-9/3D/boat-3.png'
+import ship043d from '../../../static/img/area-9/3D/boat-4.png'
+import net013d from '../../../static/img/area-9/3D/net-1.png'
+import net023d from '../../../static/img/area-9/3D/net-2.png'
+import net033d from '../../../static/img/area-9/3D/net-3.png'
+import netMask013d from '../../../static/img/area-9/3D/net-1-mask.png'
+import netMask023d from '../../../static/img/area-9/3D/net-2-mask.png'
+import netMask033d from '../../../static/img/area-9/3D/net-3-mask.png'
+import sea1 from '../../../static/img/area-9/3D/sea-1.png'
+import sea2 from '../../../static/img/area-9/3D/sea-2.png'
+import word from '../../../static/img/area-9/3D/word.png'
+import circle2d from '../../../static/img/area-9/2D/cirle.png'
+import ship012d from '../../../static/img/area-9/2D/boat-1.png'
+import ship022d from '../../../static/img/area-9/2D/boat-2.png'
+import net012d from '../../../static/img/area-9/2D/net-1.png'
+import net022d from '../../../static/img/area-9/2D/net-2.png'
+import netBg2d from '../../../static/img/area-9/2D/net-2-mask.png'
+import fish2d from '../../../static/img/area-9/2D/fish.png'
 
 function get2DNetAnimationData(toStartAnimation) {
-  let animation;
+  let animation
 
   if (toStartAnimation) {
     animation = {
       left: '0%',
-    };
+    }
   }
 
   return {
@@ -52,13 +52,13 @@ function get2DNetAnimationData(toStartAnimation) {
     duration: 1000,
     easing: 'ease-in-out',
     imgSrc: net022d,
-  };
+  }
 }
 
 function get2DCircleAnimationData(toStartAnimation) {
-  const delay = 0;
-  const duration = 500;
-  const animation = toStartAnimation ? { opacity: 1 } : { opacity: 0 };
+  const delay = 0
+  const duration = 500
+  const animation = toStartAnimation ? { opacity: 1 } : { opacity: 0 }
 
   return {
     animation,
@@ -66,7 +66,7 @@ function get2DCircleAnimationData(toStartAnimation) {
     duration,
     className: style.circle,
     imgSrc: circle2d,
-  };
+  }
 }
 
 
@@ -84,7 +84,7 @@ function get3DNet03AnimationData(toStartAnimation) {
       img: style['net03-3d'],
       mask: style.mask,
     },
-  };
+  }
 }
 
 function get3DNet02AnimationData(toStartAnimation) {
@@ -101,7 +101,7 @@ function get3DNet02AnimationData(toStartAnimation) {
       img: style['net02-3d'],
       mask: style.mask,
     },
-  };
+  }
 }
 
 function get3DNet01AnimationData(toStartAnimation) {
@@ -118,27 +118,27 @@ function get3DNet01AnimationData(toStartAnimation) {
       img: style['net01-3d'],
       mask: style.mask,
     },
-  };
+  }
 }
 
 class Ship2DJsx extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       isAnimated: false,
-    };
+    }
   }
 
   shouldComponentUpdate(nextProps) {
     if (nextProps.toStartAnimation !== this.props.toStartAnimation) {
-      return true;
+      return true
     }
-    return false;
+    return false
   }
 
   render() {
-    const { isAnimated } = this.state;
-    const { toStartAnimation, onAnimationFinish } = this.props;
+    const { isAnimated } = this.state
+    const { toStartAnimation, onAnimationFinish } = this.props
     const animation = toStartAnimation && !isAnimated ? velocityHelpers.registerEffect({
       defaultDuration: 3000,
       calls: [
@@ -159,14 +159,14 @@ class Ship2DJsx extends Component {
           left: '55%',
         }, 0.333],
       ],
-    }) : undefined;
+    }) : undefined
 
     const complete = () => {
       this.setState({
         isAnimated: true,
-      });
-      onAnimationFinish();
-    };
+      })
+      onAnimationFinish()
+    }
 
     return (
       <Animate
@@ -176,66 +176,66 @@ class Ship2DJsx extends Component {
         easing="ease-in-out"
         onAnimationFinish={toStartAnimation ? complete : undefined}
       />
-    );
+    )
   }
 }
 
 Ship2DJsx.propTypes = {
   onAnimationFinish: PropTypes.func,
   toStartAnimation: PropTypes.bool,
-};
+}
 
 Ship2DJsx.defaultProps = {
   onAnimationFinish: undefined,
   toStartAnimation: false,
-};
+}
 
 class Bubble extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       toAnimate: false,
-    };
+    }
   }
 
   componentDidMount() {
-    const self = this;
+    const self = this
     function changeBubble() {
       setTimeout(() => {
         self.setState({
           toAnimate: !self.state.toAnimate,
-        });
-        changeBubble();
-      }, 150);
+        })
+        changeBubble()
+      }, 150)
     }
-    changeBubble();
+    changeBubble()
   }
 
   render() {
-    const { className, toStartAnimation } = this.props;
-    const { toAnimate } = this.state;
+    const { className, toStartAnimation } = this.props
+    const { toAnimate } = this.state
     return (
       <div className={className} style={{ display: toStartAnimation ? 'block' : 'none' }}>
         <img src={sea1} role="presentation" style={{ display: toAnimate ? 'block' : 'none' }} />
         <img src={sea2} role="presentation" style={{ display: toAnimate ? 'none' : 'block' }} />
       </div>
-    );
+    )
   }
 }
 
 Bubble.propTypes = {
   className: PropTypes.string,
   toStartAnimation: PropTypes.bool,
-};
+}
 
 Bubble.defaultProps = {
   className: '',
   toStartAnimation: false,
-};
+}
 
 class Area extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       toAnimateMove1: false,
       toAnimateMove2: false,
@@ -244,57 +244,57 @@ class Area extends Component {
       toAnimateMove5: false,
       toAnimateMove6: false,
       toAnimateMove7: false,
-    };
-    this.onChange = this._onChange.bind(this);
-    this.onMove1AnimationFinish = this._onAnimationStart.bind(this, 'Move2');
-    this.onMove2AnimationFinish = this._onAnimationStart.bind(this, 'Move3');
-    this.onMove3AnimationFinish = this._onAnimationStart.bind(this, 'Move4');
-    this.onMove4AnimationFinish = this._onAnimationStart.bind(this, 'Move5');
-    this.onMove5AnimationFinish = this._onAnimationStart.bind(this, 'Move6');
-    this.onMove6AnimationFinish = this._onAnimationStart.bind(this, 'Move7');
+    }
+    this.onChange = this._onChange.bind(this)
+    this.onMove1AnimationFinish = this._onAnimationStart.bind(this, 'Move2')
+    this.onMove2AnimationFinish = this._onAnimationStart.bind(this, 'Move3')
+    this.onMove3AnimationFinish = this._onAnimationStart.bind(this, 'Move4')
+    this.onMove4AnimationFinish = this._onAnimationStart.bind(this, 'Move5')
+    this.onMove5AnimationFinish = this._onAnimationStart.bind(this, 'Move6')
+    this.onMove6AnimationFinish = this._onAnimationStart.bind(this, 'Move7')
   }
 
   componentDidMount() {
-    this._isMounted = true;
+    this._isMounted = true
   }
 
   componentWillUnmount() {
-    this._isMounted = false;
+    this._isMounted = false
   }
 
   _onChange(isVisible) {
     if (isVisible && this._isMounted) {
       this.setState({
         toAnimateMove1: true,
-      });
+      })
     }
   }
 
   _onAnimationStart(target) {
     this.setState({
       [`toAnimate${target}`]: true,
-    });
+    })
   }
 
   render() {
-    const baseHeight = 589;
-    const baseWidth = 414;
+    const baseHeight = 589
+    const baseWidth = 414
 
     const { toAnimateMove1, toAnimateMove2,
       toAnimateMove3, toAnimateMove4,
       toAnimateMove5, toAnimateMove6,
       toAnimateMove7,
-    } = this.state;
+    } = this.state
 
     const ship1Data = {
       animation: !toAnimateMove1 ? { left: `${(198 / baseWidth) * 100}%`, top: `${(255 / baseHeight) * 100}%`, opacity: 1 } : { left: `${(182 / baseWidth) * 100}%`, top: `${(277 / baseHeight) * 100}%` },
       className: style['ship01-3d'],
       imgSrc: ship013d,
-    };
+    }
 
     if (toAnimateMove2) {
-      ship1Data.animation.opacity = 0;
-      ship1Data.delay = 300;
+      ship1Data.animation.opacity = 0
+      ship1Data.delay = 300
     }
 
     const ship2Data = {
@@ -302,11 +302,11 @@ class Area extends Component {
       className: style['ship02-3d'],
       imgSrc: ship023d,
       delay: 500,
-    };
+    }
 
     if (toAnimateMove3) {
-      ship2Data.animation.opacity = 0;
-      ship2Data.delay = 300;
+      ship2Data.animation.opacity = 0
+      ship2Data.delay = 300
     }
 
     const ship3Data = {
@@ -314,11 +314,11 @@ class Area extends Component {
       className: style['ship03-3d'],
       imgSrc: ship033d,
       delay: 800,
-    };
+    }
 
     if (toAnimateMove4) {
-      ship3Data.animation.opacity = 0;
-      ship3Data.delay = 300;
+      ship3Data.animation.opacity = 0
+      ship3Data.delay = 300
     }
 
     const ship4Data = {
@@ -326,7 +326,7 @@ class Area extends Component {
       className: style['ship04-3d'],
       imgSrc: ship043d,
       delay: 500,
-    };
+    }
 
     return (
       <div className={baseStyle.area} style={{ backgroundColor: '#738498', marginTop: '-2px' }}>
@@ -416,8 +416,8 @@ class Area extends Component {
           </VisibilitySensor>
         </div>
       </div>
-    );
+    )
   }
 
 }
-export default Area;
+export default Area

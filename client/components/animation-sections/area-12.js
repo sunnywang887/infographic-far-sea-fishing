@@ -1,18 +1,18 @@
 /* eslint no-underscore-dangle: ["error", { "allowAfterThis": true }] */
 /* eslint no-unused-vars: ["error", { "args": "none" }] */
 
-import cx from 'classnames';
-import React from 'react';
+import cx from 'classnames'
+import React from 'react'
 
 // css
-import baseStyle from './base.scss';
-import style from './area-12.scss';
+import baseStyle from './base.scss'
+import style from './area-12.scss'
 
 // image
-import boat from '../../../static/img/area-12/boat.png';
-import fish from '../../../static/img/area-12/fish.png';
-import sea1 from '../../../static/img/area-12/sea-w414.png';
-import sea2 from '../../../static/img/area-12/sea-w5000.png';
+import boat from '../../../static/img/area-12/boat.png'
+import fish from '../../../static/img/area-12/fish.png'
+import sea1 from '../../../static/img/area-12/sea-w414.png'
+import sea2 from '../../../static/img/area-12/sea-w5000.png'
 
 function Area(props) {
   return (
@@ -40,6 +40,6 @@ function Area(props) {
         </div>
       </div>
     </div>
-  );
+  )
 }
-export default Area;
+export default Area

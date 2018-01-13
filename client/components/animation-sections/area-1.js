@@ -1,42 +1,42 @@
 /* eslint  no-underscore-dangle: ["error", { "allowAfterThis": true }]*/
 
-import React, { Component, PropTypes } from 'react';
-import VisibilitySensor from 'react-visibility-sensor';
+import 'velocity-animate'
+import 'velocity-animate/velocity.ui'
+
+import React, { Component, PropTypes } from 'react'
+import VisibilitySensor from 'react-visibility-sensor'
 // lodash
-import map from 'lodash/map';
-import cx from 'classnames';
-import { VelocityComponent, velocityHelpers } from 'velocity-react';
-import baseStyle from './base.scss';
-import style from './area-1.scss';
+import map from 'lodash/map'
+import cx from 'classnames'
+import { VelocityComponent, velocityHelpers } from 'velocity-react'
+import baseStyle from './base.scss'
+import style from './area-1.scss'
 
 // image
-import bgImg from '../../../static/img/area-1/background.png';
-import plateImg from '../../../static/img/area-1/plate.png';
-import sashimi01 from '../../../static/img/area-1/sashimi-1.png';
-import sashimiMask01 from '../../../static/img/area-1/sashimi-mask-1.png';
-import sashimi02 from '../../../static/img/area-1/sashimi-2.png';
-import sashimiMask02 from '../../../static/img/area-1/sashimi-mask-2.png';
-import sashimi03 from '../../../static/img/area-1/sashimi-3.png';
-import sashimiMask03 from '../../../static/img/area-1/sashimi-mask-3.png';
-import sashimi04 from '../../../static/img/area-1/sashimi-4.png';
-import sashimiMask04 from '../../../static/img/area-1/sashimi-mask-4.png';
-import sashimi05 from '../../../static/img/area-1/sashimi-5.png';
-import sashimiMask05 from '../../../static/img/area-1/sashimi-mask-5.png';
-import text01 from '../../../static/img/area-1/sashimi-word-1.png';
-import text02 from '../../../static/img/area-1/sashimi-word-2.png';
-import text03 from '../../../static/img/area-1/sashimi-word-3.png';
-import text04 from '../../../static/img/area-1/sashimi-word-4.png';
-import text05 from '../../../static/img/area-1/sashimi-word-5.png';
-import title01 from '../../../static/img/area-1/title-1.png';
-import title02 from '../../../static/img/area-1/title-2.png';
-import title03 from '../../../static/img/area-1/title-3.png';
-
-require('velocity-animate');
-require('velocity-animate/velocity.ui');
+import bgImg from '../../../static/img/area-1/background.png'
+import plateImg from '../../../static/img/area-1/plate.png'
+import sashimi01 from '../../../static/img/area-1/sashimi-1.png'
+import sashimiMask01 from '../../../static/img/area-1/sashimi-mask-1.png'
+import sashimi02 from '../../../static/img/area-1/sashimi-2.png'
+import sashimiMask02 from '../../../static/img/area-1/sashimi-mask-2.png'
+import sashimi03 from '../../../static/img/area-1/sashimi-3.png'
+import sashimiMask03 from '../../../static/img/area-1/sashimi-mask-3.png'
+import sashimi04 from '../../../static/img/area-1/sashimi-4.png'
+import sashimiMask04 from '../../../static/img/area-1/sashimi-mask-4.png'
+import sashimi05 from '../../../static/img/area-1/sashimi-5.png'
+import sashimiMask05 from '../../../static/img/area-1/sashimi-mask-5.png'
+import text01 from '../../../static/img/area-1/sashimi-word-1.png'
+import text02 from '../../../static/img/area-1/sashimi-word-2.png'
+import text03 from '../../../static/img/area-1/sashimi-word-3.png'
+import text04 from '../../../static/img/area-1/sashimi-word-4.png'
+import text05 from '../../../static/img/area-1/sashimi-word-5.png'
+import title01 from '../../../static/img/area-1/title-1.png'
+import title02 from '../../../static/img/area-1/title-2.png'
+import title03 from '../../../static/img/area-1/title-3.png'
 
 const _ = {
   map,
-};
+}
 
 function SashimiTextJsx({ children, duration, delay, toStartAnimation }) {
   return (
@@ -47,7 +47,7 @@ function SashimiTextJsx({ children, duration, delay, toStartAnimation }) {
     >
       { React.Children.only(children) }
     </VelocityComponent>
-  );
+  )
 }
 
 SashimiTextJsx.propTypes = {
@@ -55,38 +55,38 @@ SashimiTextJsx.propTypes = {
   duration: PropTypes.number,
   delay: PropTypes.number,
   toStartAnimation: PropTypes.bool,
-};
+}
 
 SashimiTextJsx.defaultProps = {
   children: null,
   duration: 500,
   delay: 500,
   toStartAnimation: false,
-};
+}
 
 class SashimiJsx extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       isAnimated: this.props.toStartAnimation,
-    };
-    this.onAnimationFinish = this._onAnimationFinish.bind(this);
+    }
+    this.onAnimationFinish = this._onAnimationFinish.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       isAnimated: nextProps.toStartAnimation,
-    });
+    })
   }
 
   _onAnimationFinish() {
     this.setState({
       isAnimated: false,
-    });
+    })
   }
 
   render() {
-    const { delay, duration, index, sashimiImg, sashimiMaskImg } = this.props;
+    const { delay, duration, index, sashimiImg, sashimiMaskImg } = this.props
     const animation = this.state.isAnimated ?
       velocityHelpers.registerEffect({
         defaultDuration: 1500,
@@ -98,7 +98,7 @@ class SashimiJsx extends Component {
             opacity: 0,
           }, 0.1],
         ],
-      }) : { rotateZ: 0 };
+      }) : { rotateZ: 0 }
 
     return (
       <div className={style.sashimi}>
@@ -112,7 +112,7 @@ class SashimiJsx extends Component {
           <img className={style[`mask0${index}`]} src={sashimiMaskImg} role="presentation" />
         </VelocityComponent>
       </div>
-    );
+    )
   }
 }
 
@@ -123,7 +123,7 @@ SashimiJsx.propTypes = {
   toStartAnimation: PropTypes.bool,
   sashimiImg: PropTypes.string.isRequired,
   sashimiMaskImg: PropTypes.string.isRequired,
-};
+}
 
 SashimiJsx.defaultProps = {
   delay: 500,
@@ -132,37 +132,37 @@ SashimiJsx.defaultProps = {
   toStartAnimation: false,
   sashimiImg: PropTypes.string.isRequired,
   sashimiMaskImg: PropTypes.string.isRequired,
-};
+}
 
 class Area extends Component {
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       toStartAnimation: false,
-    };
-    this.onChange = this._onChange.bind(this);
+    }
+    this.onChange = this._onChange.bind(this)
   }
 
   componentDidMount() {
-    this._isMounted = true;
+    this._isMounted = true
   }
 
   componentWillUnmount() {
-    this._isMounted = false;
+    this._isMounted = false
   }
 
   _onChange(isVisible) {
     if (isVisible && this._isMounted) {
       this.setState({
         toStartAnimation: true,
-      });
+      })
     }
   }
 
   render() {
-    const toStartAnimation = this.state.toStartAnimation;
-    let textObjs = [text01, text02, text03, text04, text05];
+    const toStartAnimation = this.state.toStartAnimation
+    let textObjs = [text01, text02, text03, text04, text05]
     textObjs = _.map(textObjs, (textObj, index) => (
       <SashimiTextJsx
         duration={300}
@@ -172,7 +172,7 @@ class Area extends Component {
       >
         <img className={style[`text0${index + 1}`]} src={textObj} role="presentation" />
       </SashimiTextJsx>
-      ));
+      ))
 
     let pieObjs = [
       [sashimi01, sashimiMask01],
@@ -180,7 +180,7 @@ class Area extends Component {
       [sashimi03, sashimiMask03],
       [sashimi04, sashimiMask04],
       [sashimi05, sashimiMask05],
-    ];
+    ]
 
     pieObjs = _.map(pieObjs, (pieArr, index) => (
       <SashimiJsx
@@ -192,7 +192,7 @@ class Area extends Component {
         index={index + 1}
         key={index}
       />
-      ));
+      ))
 
     return (
       <div className={baseStyle.area} style={{ backgroundColor: '#EDEBEB' }}>
@@ -233,8 +233,8 @@ class Area extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 
 }
-export default Area;
+export default Area

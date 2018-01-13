@@ -1,24 +1,24 @@
 /* eslint no-underscore-dangle: ["error", { "allowAfterThis": true }] */
 /* eslint no-unused-vars: ["error", { "args": "none" }] */
 
-import cx from 'classnames';
-import React from 'react';
-import { FacebookButton, TwitterButton } from 'react-social';
+import cx from 'classnames'
+import React from 'react'
+import { FacebookButton, TwitterButton } from 'react-social'
 
 // css
-import baseStyle from './base.scss';
-import style from './footer.scss';
+import baseStyle from './base.scss'
+import style from './footer.scss'
 
 // image
-import donate from '../../../static/img/footer/icon-donation.png';
-import logo from '../../../static/img/footer/logo.png';
-import cc from '../../../static/img/footer/icon-cc.png';
-import github from '../../../static/img/footer/icon-github.png';
-import fb from '../../../static/img/footer/icon-share-fb.svg';
-import twitter from '../../../static/img/footer/icon-share-twitter.svg';
+import donate from '../../../static/img/footer/icon-donation.png'
+import logo from '../../../static/img/footer/logo.png'
+import cc from '../../../static/img/footer/icon-cc.png'
+import github from '../../../static/img/footer/icon-github.png'
+import fb from '../../../static/img/footer/icon-share-fb.svg'
+import twitter from '../../../static/img/footer/icon-share-twitter.svg'
 
 // CONSTANTS
-import CONSTANTS from './constants';
+import CONSTANTS from './constants'
 
 function Area(props) {
   return (
@@ -57,6 +57,6 @@ function Area(props) {
         </div>
       </div>
     </div>
-  );
+  )
 }
-export default Area;
+export default Area

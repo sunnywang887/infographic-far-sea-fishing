@@ -1,54 +1,54 @@
 /* eslint  no-underscore-dangle: ["error", { "allowAfterThis": true }]*/
 
-import React, { Component } from 'react';
-import VisibilitySensor from 'react-visibility-sensor';
-import cx from 'classnames';
-import { VelocityComponent } from 'velocity-react';
-import baseStyle from './base.scss';
-import style from './opening.scss';
-import { Animate } from './base-animate';
+import React, { Component } from 'react'
+import VisibilitySensor from 'react-visibility-sensor'
+import cx from 'classnames'
+import { VelocityComponent } from 'velocity-react'
+import baseStyle from './base.scss'
+import style from './opening.scss'
+import { Animate } from './base-animate'
 // image
-import bgImg from '../../../static/img/opening/background.png';
-import titleImg from '../../../static/img/opening/title.png';
-import boat01Img from '../../../static/img/opening/boat-1.png';
-import boat02Img from '../../../static/img/opening/boat-2.png';
-import sunImg from '../../../static/img/opening/sun.png';
-import fish01Img from '../../../static/img/opening/tuna-1.png';
-import fish02Img from '../../../static/img/opening/tuna-2.png';
-import sea01Img from '../../../static/img/opening/sea-w414.png';
-import sea02Img from '../../../static/img/opening/sea-w5000.png';
-import logoImg from '../../../static/img/opening/logo.svg';
+import bgImg from '../../../static/img/opening/background.png'
+import titleImg from '../../../static/img/opening/title.png'
+import boat01Img from '../../../static/img/opening/boat-1.png'
+import boat02Img from '../../../static/img/opening/boat-2.png'
+import sunImg from '../../../static/img/opening/sun.png'
+import fish01Img from '../../../static/img/opening/tuna-1.png'
+import fish02Img from '../../../static/img/opening/tuna-2.png'
+import sea01Img from '../../../static/img/opening/sea-w414.png'
+import sea02Img from '../../../static/img/opening/sea-w5000.png'
+import logoImg from '../../../static/img/opening/logo.svg'
 
 class Area extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       toAnimateBoat: false,
       toAnimateFishFadeIn: false,
       toAnimateFishJump: false,
       toAnimateText: false,
-    };
-    this.onChange = this._onChange.bind(this);
-    this.onBoatAnimationFinish = this._onAnimationStart.bind(this, 'FishFadeIn');
-    this.onFishFadeInAnimationFinish = this._onAnimationStart.bind(this, 'Text');
+    }
+    this.onChange = this._onChange.bind(this)
+    this.onBoatAnimationFinish = this._onAnimationStart.bind(this, 'FishFadeIn')
+    this.onFishFadeInAnimationFinish = this._onAnimationStart.bind(this, 'Text')
   }
 
   componentDidMount() {
-    this._isMounted = true;
-    const self = this;
+    this._isMounted = true
+    const self = this
     function changeJumpState() {
       setTimeout(() => {
         self.setState({
           toAnimateFishJump: !self.state.toAnimateFishJump,
-        });
-        changeJumpState();
-      }, 100);
+        })
+        changeJumpState()
+      }, 100)
     }
-    changeJumpState();
+    changeJumpState()
   }
 
   componentWillUnmount() {
-    this._isMounted = false;
+    this._isMounted = false
   }
 
   _onChange(isVisible) {
@@ -56,22 +56,22 @@ class Area extends Component {
       this._timeout = setTimeout(() => {
         this.setState({
           toAnimateBoat: true,
-        });
-        clearTimeout(this._timeout);
-      }, 500);
+        })
+        clearTimeout(this._timeout)
+      }, 500)
     }
   }
 
   _onAnimationStart(target) {
     this.setState({
       [`toAnimate${target}`]: true,
-    });
+    })
   }
 
   render() {
-    const { toAnimateBoat, toAnimateFishFadeIn, toAnimateFishJump, toAnimateText } = this.state;
-    const baseHeight = 643;
-    const baseWidth = 414;
+    const { toAnimateBoat, toAnimateFishFadeIn, toAnimateFishJump, toAnimateText } = this.state
+    const baseHeight = 643
+    const baseWidth = 414
 
     return (
       <VisibilitySensor
@@ -148,8 +148,8 @@ class Area extends Component {
           </div>
         </div>
       </VisibilitySensor>
-    );
+    )
   }
 }
 
-export default Area;
+export default Area

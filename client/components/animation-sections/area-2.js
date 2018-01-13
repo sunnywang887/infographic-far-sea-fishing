@@ -1,26 +1,26 @@
 /* eslint  no-underscore-dangle: ["error", { "allowAfterThis": true }]*/
 
-import React, { Component, PropTypes } from 'react';
-import VisibilitySensor from 'react-visibility-sensor';
-import cx from 'classnames';
-import { VelocityComponent } from 'velocity-react';
-import style from './area-2.scss';
-import { Animate } from './base-animate';
-// image
-import bgImg from '../../../static/img/area-2/background.png';
-import earthImg from '../../../static/img/area-2/earth.png';
-import shadowImg from '../../../static/img/area-2/shadow.png';
-import canBgImg from '../../../static/img/area-2/can-mask.png';
-import canImg from '../../../static/img/area-2/can.png';
-import textImg from '../../../static/img/area-2/word.png';
-import title01 from '../../../static/img/area-2/title-1.png';
-import title02 from '../../../static/img/area-2/title-2.png';
+import 'velocity-animate'
+import 'velocity-animate/velocity.ui'
 
-require('velocity-animate');
-require('velocity-animate/velocity.ui');
+import React, { Component, PropTypes } from 'react'
+import VisibilitySensor from 'react-visibility-sensor'
+import cx from 'classnames'
+import { VelocityComponent } from 'velocity-react'
+import style from './area-2.scss'
+import { Animate } from './base-animate'
+// image
+import bgImg from '../../../static/img/area-2/background.png'
+import earthImg from '../../../static/img/area-2/earth.png'
+import shadowImg from '../../../static/img/area-2/shadow.png'
+import canBgImg from '../../../static/img/area-2/can-mask.png'
+import canImg from '../../../static/img/area-2/can.png'
+import textImg from '../../../static/img/area-2/word.png'
+import title01 from '../../../static/img/area-2/title-1.png'
+import title02 from '../../../static/img/area-2/title-2.png'
 
 function getTextAnimationData(toStartAnimation) {
-  const animation = toStartAnimation ? { opacity: 1 } : { opacity: 0 };
+  const animation = toStartAnimation ? { opacity: 1 } : { opacity: 0 }
 
   return {
     animation,
@@ -28,11 +28,11 @@ function getTextAnimationData(toStartAnimation) {
     duration: 500,
     className: cx(style.word, style['ab-center']),
     imgSrc: textImg,
-  };
+  }
 }
 
 function CanJsx({ delay, toStartAnimation, onAnimationFinish }) {
-  const animation = toStartAnimation ? 'transition.bounceIn' : { opacity: 0 };
+  const animation = toStartAnimation ? 'transition.bounceIn' : { opacity: 0 }
 
   return (
     <li>
@@ -46,25 +46,25 @@ function CanJsx({ delay, toStartAnimation, onAnimationFinish }) {
         <img className={style.can} src={canImg} role="presentation" />
       </VelocityComponent>
     </li>
-  );
+  )
 }
 
 CanJsx.propTypes = {
   delay: PropTypes.number,
   onAnimationFinish: PropTypes.func,
   toStartAnimation: PropTypes.bool,
-};
+}
 
 CanJsx.defaultProps = {
   delay: 500,
   onAnimationFinish: undefined,
   toStartAnimation: false,
-};
+}
 
 
 function CansJsx({ delay = 0, number, toStartAnimation, onAnimationFinish }) {
-  const cansNumber = number;
-  const cansJsx = [];
+  const cansNumber = number
+  const cansJsx = []
 
   for (let index = 0; index < cansNumber; index += 1) {
     cansJsx.push(
@@ -74,13 +74,13 @@ function CansJsx({ delay = 0, number, toStartAnimation, onAnimationFinish }) {
         toStartAnimation={toStartAnimation}
         onAnimationFinish={index === cansNumber - 1 ? onAnimationFinish : undefined}
       />,
-    );
+    )
   }
   return (
     <ul>
       {cansJsx}
     </ul>
-  );
+  )
 }
 
 CansJsx.propTypes = {
@@ -88,39 +88,39 @@ CansJsx.propTypes = {
   number: PropTypes.number,
   onAnimationFinish: PropTypes.func,
   toStartAnimation: PropTypes.bool,
-};
+}
 
 CansJsx.defaultProps = {
   delay: 500,
   number: 10,
   onAnimationFinish: undefined,
   toStartAnimation: false,
-};
+}
 
 class Area extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       toAnimateCans: false,
       toAnimateText: false,
-    };
-    this.onChange = this._onChange.bind(this);
-    this.onCansAnimationFinish = this._onAnimationStart.bind(this, 'text');
+    }
+    this.onChange = this._onChange.bind(this)
+    this.onCansAnimationFinish = this._onAnimationStart.bind(this, 'text')
   }
 
   componentDidMount() {
-    this._isMounted = true;
+    this._isMounted = true
   }
 
   componentWillUnmount() {
-    this._isMounted = false;
+    this._isMounted = false
   }
 
   _onChange(isVisible) {
     if (isVisible && this._isMounted) {
       this.setState({
         toAnimateCans: true,
-      });
+      })
     }
   }
 
@@ -129,15 +129,15 @@ class Area extends Component {
       case 'text':
         this.setState({
           toAnimateText: true,
-        });
-        break;
+        })
+        break
       default:
 
     }
   }
 
   render() {
-    const { toAnimateCans, toAnimateText } = this.state;
+    const { toAnimateCans, toAnimateText } = this.state
 
     return (
       <VisibilitySensor
@@ -188,8 +188,8 @@ class Area extends Component {
           </div>
         </div>
       </VisibilitySensor>
-    );
+    )
   }
 }
 
-export default Area;
+export default Area

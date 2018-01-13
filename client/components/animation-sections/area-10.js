@@ -1,26 +1,26 @@
 /* eslint  no-underscore-dangle: ["error", { "allowAfterThis": true }]*/
 
-import React, { Component } from 'react';
-import VisibilitySensor from 'react-visibility-sensor';
-import cx from 'classnames';
-import baseStyle from './base.scss';
-import style from './area-10.scss';
-import { Animate, AnimateWithMask } from './base-animate';
+import React, { Component } from 'react'
+import VisibilitySensor from 'react-visibility-sensor'
+import cx from 'classnames'
+import baseStyle from './base.scss'
+import style from './area-10.scss'
+import { Animate, AnimateWithMask } from './base-animate'
 
 // image
-import bgImg from '../../../static/img/area-10/background.png';
-import titleImg from '../../../static/img/area-10/title.png';
-import ship01Img from '../../../static/img/area-10/3D/boat.png';
-import ship02Img from '../../../static/img/area-10/2D/boat.png';
-import ballImg from '../../../static/img/area-10/3D/ball.png';
-import ballMaskImg from '../../../static/img/area-10/3D/ball-mask.png';
-import circleImg from '../../../static/img/area-10/2D/cirle.png';
-import netImg from '../../../static/img/area-10/2D/rope.png';
-import netBgImg from '../../../static/img/area-10/2D/rope-mask.png';
-import floatImg from '../../../static/img/area-10/2D/float.png';
-import floatBgImg from '../../../static/img/area-10/2D/float-mask.png';
-import textImg from '../../../static/img/area-10/3D/word.png';
-import fishImg from '../../../static/img/area-10/2D/fish.png';
+import bgImg from '../../../static/img/area-10/background.png'
+import titleImg from '../../../static/img/area-10/title.png'
+import ship01Img from '../../../static/img/area-10/3D/boat.png'
+import ship02Img from '../../../static/img/area-10/2D/boat.png'
+import ballImg from '../../../static/img/area-10/3D/ball.png'
+import ballMaskImg from '../../../static/img/area-10/3D/ball-mask.png'
+import circleImg from '../../../static/img/area-10/2D/cirle.png'
+import netImg from '../../../static/img/area-10/2D/rope.png'
+import netBgImg from '../../../static/img/area-10/2D/rope-mask.png'
+import floatImg from '../../../static/img/area-10/2D/float.png'
+import floatBgImg from '../../../static/img/area-10/2D/float-mask.png'
+import textImg from '../../../static/img/area-10/3D/word.png'
+import fishImg from '../../../static/img/area-10/2D/fish.png'
 
 function getNetAnimationData(toStartAnimation) {
   return {
@@ -36,7 +36,7 @@ function getNetAnimationData(toStartAnimation) {
       img: style.net,
       mask: style.mask,
     },
-  };
+  }
 }
 
 function getFloatAnimationData(toStartAnimation) {
@@ -53,20 +53,20 @@ function getFloatAnimationData(toStartAnimation) {
       img: style.float,
       mask: style.mask,
     },
-  };
+  }
 }
 
 function getTextAnimationData(toStartAnimation) {
   let animation = {
     opacity: 0,
-  };
-  const delay = 0;
-  const duration = 500;
+  }
+  const delay = 0
+  const duration = 500
 
   if (toStartAnimation) {
     animation = {
       opacity: 1,
-    };
+    }
   }
 
   return {
@@ -75,20 +75,20 @@ function getTextAnimationData(toStartAnimation) {
     duration,
     className: style.word,
     imgSrc: textImg,
-  };
+  }
 }
 
 function getFishAnimationData(toStartAnimation) {
   let animation = {
     opacity: 0,
-  };
-  const delay = 0;
-  const duration = 1000;
+  }
+  const delay = 0
+  const duration = 1000
 
   if (toStartAnimation) {
     animation = {
       opacity: 1,
-    };
+    }
   }
 
   return {
@@ -97,18 +97,18 @@ function getFishAnimationData(toStartAnimation) {
     duration,
     className: style.fish,
     imgSrc: fishImg,
-  };
+  }
 }
 
 function getShip02AnimationData(toStartAnimation) {
-  let animation;
-  const delay = 300;
-  const duration = 1000;
+  let animation
+  const delay = 300
+  const duration = 1000
 
   if (toStartAnimation) {
     animation = {
       left: '76.1%',
-    };
+    }
   }
 
   return {
@@ -118,13 +118,13 @@ function getShip02AnimationData(toStartAnimation) {
     className: style.ship02,
     imgSrc: ship02Img,
     easing: 'ease-in-out',
-  };
+  }
 }
 
 function getCircleAnimationData(toStartAnimation) {
-  const delay = 0;
-  const duration = 500;
-  const animation = toStartAnimation ? { opacity: 1 } : { opacity: 0 };
+  const delay = 0
+  const duration = 500
+  const animation = toStartAnimation ? { opacity: 1 } : { opacity: 0 }
 
   return {
     animation,
@@ -132,7 +132,7 @@ function getCircleAnimationData(toStartAnimation) {
     duration,
     className: style.circle,
     imgSrc: circleImg,
-  };
+  }
 }
 
 function getBallAnimationData(toStartAnimation) {
@@ -150,15 +150,15 @@ function getBallAnimationData(toStartAnimation) {
       img: style.ball,
       mask: style['ball-mask'],
     },
-  };
+  }
 }
 
 function getShip01AnimationData(toStartAnimation) {
-  const baseHeight = 501;
-  const baseWidth = 414;
-  const delay = 0;
-  const duration = 2000;
-  const animation = toStartAnimation ? { top: `${(98 / baseHeight) * 100}%`, left: `${(274 / baseWidth) * 100}%` } : { top: '80%', left: '-40%' };
+  const baseHeight = 501
+  const baseWidth = 414
+  const delay = 0
+  const duration = 2000
+  const animation = toStartAnimation ? { top: `${(98 / baseHeight) * 100}%`, left: `${(274 / baseWidth) * 100}%` } : { top: '80%', left: '-40%' }
 
   return {
     animation,
@@ -167,13 +167,13 @@ function getShip01AnimationData(toStartAnimation) {
     className: style.ship01,
     imgSrc: ship01Img,
     easing: 'ease-in-out',
-  };
+  }
 }
 
 class Area extends Component {
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       toAnimateShip01: false,
       toAnimateBall: false,
@@ -183,26 +183,26 @@ class Area extends Component {
       toAnimateNet: false,
       toAnimateFish: false,
       toAnimateText: false,
-    };
-    this.onChange = this._onChange.bind(this);
-    this.onBallAnimationFinish = this._onAnimationStart.bind(this, 'circle');
+    }
+    this.onChange = this._onChange.bind(this)
+    this.onBallAnimationFinish = this._onAnimationStart.bind(this, 'circle')
 
     this._onCircleAnimationFinish = () => {
-      this._onAnimationStart('ship02');
-      this._onAnimationStart('float');
-    };
-    this.onCircleAnimationFinish = this._onCircleAnimationFinish.bind(this);
-    this.onFloatAnimationFinish = this._onAnimationStart.bind(this, 'net');
-    this.onNetAnimationFinish = this._onAnimationStart.bind(this, 'fish');
-    this.onFishAnimationFinish = this._onAnimationStart.bind(this, 'text');
+      this._onAnimationStart('ship02')
+      this._onAnimationStart('float')
+    }
+    this.onCircleAnimationFinish = this._onCircleAnimationFinish.bind(this)
+    this.onFloatAnimationFinish = this._onAnimationStart.bind(this, 'net')
+    this.onNetAnimationFinish = this._onAnimationStart.bind(this, 'fish')
+    this.onFishAnimationFinish = this._onAnimationStart.bind(this, 'text')
   }
 
   componentDidMount() {
-    this._isMounted = true;
+    this._isMounted = true
   }
 
   componentWillUnmount() {
-    this._isMounted = false;
+    this._isMounted = false
   }
 
   _onChange(isVisible) {
@@ -210,7 +210,7 @@ class Area extends Component {
       this.setState({
         toAnimateShip01: true,
         toAnimateBall: true,
-      });
+      })
     }
   }
 
@@ -219,33 +219,33 @@ class Area extends Component {
       case 'circle':
         this.setState({
           toAnimateCircle: true,
-        });
-        break;
+        })
+        break
       case 'ship02':
         this.setState({
           toAnimateShip02: true,
-        });
-        break;
+        })
+        break
       case 'float':
         this.setState({
           toAnimateFloat: true,
-        });
-        break;
+        })
+        break
       case 'net':
         this.setState({
           toAnimateNet: true,
-        });
-        break;
+        })
+        break
       case 'fish':
         this.setState({
           toAnimateFish: true,
-        });
-        break;
+        })
+        break
       case 'text':
         this.setState({
           toAnimateText: true,
-        });
-        break;
+        })
+        break
       default:
 
     }
@@ -254,7 +254,7 @@ class Area extends Component {
   render() {
     const { toAnimateShip01, toAnimateBall, toAnimateCircle,
       toAnimateShip02, toAnimateFloat, toAnimateNet,
-      toAnimateFish, toAnimateText } = this.state;
+      toAnimateFish, toAnimateText } = this.state
 
     return (
       <div className={baseStyle.area} style={{ backgroundColor: '#738498', marginTop: '-2px' }}>
@@ -309,8 +309,8 @@ class Area extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 
 }
-export default Area;
+export default Area
