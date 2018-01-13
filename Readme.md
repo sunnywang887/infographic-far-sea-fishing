@@ -1,7 +1,5 @@
-
-# Frontend Boilerplate
-
-A boilerplate of things that mostly shouldn't exist.
+## Infographic news of twreporter
+checkout the [demo](https://www.twreporter.org/i/infographic-far-sea-fishing-gcs)
 
 ## Contains
 
@@ -30,10 +28,6 @@ $ npm start
 ```
 $ npm run build
 ```
-
-## Note
-
-My personal projects have diverged from this quite a bit, I use browserify now instead etc, but feel free to use this if it fits your needs! I won't be updating it a ton for now unlesse I have time to update it to match my current workflow.
 
 # License
 
